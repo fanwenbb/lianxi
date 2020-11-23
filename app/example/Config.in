@@ -1,0 +1,23 @@
+# --- Generated Automatically ---
+config AOS_APP_EXAMPLE
+    bool "Builtin Examples"
+
+if AOS_APP_EXAMPLE
+choice
+    prompt "Select example"
+
+source "app/example/uart/Config.in"
+if AOS_APP_UART
+    config AOS_BUILD_APP
+        default "uart"
+endif
+
+source "app/example/mqttapp/Config.in"
+if AOS_APP_MQTTAPP
+    config AOS_BUILD_APP
+        default "mqttapp"
+endif
+
+endchoice
+endif
+# --- End ---

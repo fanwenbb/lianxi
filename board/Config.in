@@ -1,0 +1,27 @@
+# --- Generated Automatically ---
+menu "BSP         Configuration"
+choice
+    prompt "Select board"
+
+source "board/linuxhost/Config.in"
+if AOS_BOARD_LINUXHOST
+    config AOS_BUILD_BOARD
+        default "linuxhost"
+
+    source "platform/mcu/linux/Config.in"
+    source "platform/arch/linux/Config.in"
+endif
+
+source "board/mk3060/Config.in"
+if AOS_BOARD_MK3060
+    config AOS_BUILD_BOARD
+        default "mk3060"
+
+    source "platform/mcu/moc108/Config.in"
+    source "platform/arch/arm/armv5/Config.in"
+endif
+
+endchoice
+
+endmenu
+# --- End ---

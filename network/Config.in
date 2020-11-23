@@ -1,0 +1,10 @@
+menu "Network     Configuration"
+
+source "network/lwip/Config.in"
+source "network/nal/sal/Config.in"
+source "network/netmgr/Config.in"
+source "network/yloop/Config.in"
+source "network/http/Config.in"
+source "network/und/Config.in"
+
+endmenu
